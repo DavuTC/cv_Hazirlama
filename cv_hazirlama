@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      class="arac"
+      style="
+        margin-bottom: 1px;
+        width: 1800px;
+        height: 80px;
+        border: black 1px solid;
+        text-align: center;
+      "
+    >
+      <h1>CV Hazırlama Aracı</h1>
+    </div>
+    <div
+      class="sayfa"
+      style="width: 1800px; height: 1500px; border: black 1px solid"
+    >
+      <div
+        class="metin"
+        style="
+          padding: 5px;
+          width: 520px;
+          height: 1480px;
+          background-color: rgb(175, 175, 175);
+          border: black 1px solid;
+        "
+      >
+        <h2 style="text-align: center">Metin İçerikleri</h2>
+        <hr />
+        <table>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>İsim Kutusu</b><br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="adSecim">Ad Soyad : </label></td>
+            <td><input type="text" id="adSecim" onkeyup="MetinDoldur()" /></td>
+          </tr>
+          <tr>
+            <td><label for="unvanSecim">Ünvan : </label></td>
+            <td>
+              <input type="text" id="unvanSecim" onkeyup="MetinDoldur()" />
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>İletişim Bilgileri</b> <br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="telSecim">Telefon : </label></td>
+            <td><input type="text" id="telSecim" onkeyup="MetinDoldur()" /></td>
+          </tr>
+          <tr>
+            <td><label for="mailSecim">Mail : </label></td>
+            <td>
+              <input type="text" id="mailSecim" onkeyup="MetinDoldur()" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="webSecim">Web : </label></td>
+            <td><input type="text" id="webSecim" onkeyup="MetinDoldur()" /></td>
+          </tr>
+          <tr>
+            <td><label for="adresSecim">Adres : </label></td>
+            <td>
+              <textarea
+                name=""
+                onkeyup="MetinDoldur()"
+                id="adresSecim"
+                cols="20"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>Eğitim Bilgileri</b><br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>Açıklama :</td>
+            <td>
+              <textarea
+                onkeyup="MetinDoldur()"
+                id="egitimAciklama"
+                cols="20"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="okulSayisi">Okul Sayısı : </label></td>
+            <td>
+              <select
+                name="okulSayisi"
+                id="okulSayisi"
+                onchange="OkulSayisiSec()"
+              >
+                <option value="seciniz">Seçiniz</option>
+                <option value="okul1">1</option>
+                <option value="okul2">2</option>
+                <option value="okul3">3</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="okul1" id="okulLabel1" hidden>1. Okul</label></td>
+            <td>
+              <input type="text" id="okul1" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="okulAciklama1"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="okul2" id="okulLabel2" hidden>2. Okul</label></td>
+            <td>
+              <input type="text" id="okul2" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="okulAciklama2"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="okul3" id="okulLabel3" hidden>3. Okul</label></td>
+            <td>
+              <input type="text" id="okul3" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="okulAciklama3"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>Yetenekler</b><br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>Açıklama :</td>
+            <td>
+              <textarea
+                onblur="MetinDoldur()"
+                id="yetenekAciklama"
+                cols="20"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="yetenekSayisi">Yetenek Sayısı : </label></td>
+            <td>
+              <select
+                name="yetenekSayisi"
+                id="yetenekSayisi"
+                onchange="YetenekSayisiSec()"
+              >
+                <option value="seciniz">Seçiniz</option>
+                <option value="yetenek1">1</option>
+                <option value="yetenek2">2</option>
+                <option value="yetenek3">3</option>
+                
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="yetenek1" id="yetenekLabel1" hidden>1. Yetenek</label>
+            </td>
+            <td>
+              <input type="text" id="yetenek1" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="yetenekAciklama1"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="yetenek2" id="yetenekLabel2" hidden>2. Yetenek</label>
+            </td>
+            <td>
+              <input type="text" id="yetenek2" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="yetenekAciklama2"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="yetenek3" id="yetenekLabel3" hidden>3. Yetenek</label>
+            </td>
+            <td>
+              <input type="text" id="yetenek3" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="yetenekAciklama3"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>Hakkımda</b><br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>Açıklama :</td>
+            <td>
+              <textarea
+                onkeyup="MetinDoldur()"
+                id="hakkimdaAciklama"
+                cols="20"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>İş Deneyimi</b><br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>Açıklama :</td>
+            <td>
+              <textarea
+                onkeyup="MetinDoldur()"
+                id="deneyimAciklama"
+                cols="20"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+        <br /><br />
+      </div>
+      <div
+        class="gorunus"
+        style="
+          margin-left: 1px;
+          padding: 5px;
+          width: 580px;
+          height: 1480px;
+          background-color: rgb(209, 209, 209);
+          border: black 1px solid;
+        "
+      >
+        <h2 style="text-align: center">Görünüş</h2>
+        <hr />
+        <table>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>Renkler</b><br />
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><label for="arkaplanRenk">Arkaplan Rengi : </label></td>
+            <td>
+              <input
+                type="color"
+                id="arkaplanRenk"
+                value="#dd2e2e"
+                onblur="GorunusDoldur()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="solKolonRenk">Sol Kolon Rengi : </label></td>
+            <td>
+              <input
+                type="color"
+                id="solKolonRenk"
+                value="#ad1a1a"
+                onblur="GorunusDoldur()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="isimKutusuRenk">İsim Kutusu Rengi : </label></td>
+            <td>
+              <input
+                type="color"
+                id="isimKutusuRenk"
+                value="#383838"
+                onblur="GorunusDoldur()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="isimKutusuYaziRenk">İsim Kutusu Yazı Rengi : </label>
+            </td>
+            <td>
+              <input
+                type="color"
+                id="isimKutusuYaziRenk"
+                value="#ffffff"
+                onblur="GorunusDoldur()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>Yazı Tipi</b><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="">Yazı Tipi : </label></td>
+            <td>
+              <select name="yaziTipi" id="yaziTipi" onchange="GorunusDoldur()">
+                <option value="seciniz">Seçiminiz</option>
+                <option value="yaziTipi1">Times New Roman</option>
+                <option value="yaziTipi2">Courier New</option>
+                <option value="yaziTipi3">Lucida Handwriting</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>Fotoğraf</b><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="">Fotoğraf Çerçevesi Şekli : </label></td>
+            <td>
+              <select
+                name="fotoSekil"
+                id="fotoSekil"
+                onchange="GorunusDoldur()"
+              >
+                <option value="seciniz">Seçiminiz</option>
+                <option value="fotoSekil1">Köşeli</option>
+                <option value="fotoSekil2">Oval</option>
+                <option value="fotoSekil3">Yuvarlak</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>Başlık Altı Çizgileri</b><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="cizgiRenk">Çizgi Rengi : </label></td>
+            <td>
+              <input type="color" id="cizgiRenk" onblur="GorunusDoldur()" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="">Çizgi Şekli : </label></td>
+            <td>
+              <select
+                name="cizgiSekil"
+                id="cizgiSekil"
+                onchange="GorunusDoldur()"
+              >
+                <option value="seciniz">Seçiminiz</option>
+                <option value="cizgiSekil1">Noktalı</option>
+                <option value="cizgiSekil2">Çizgili</option>
+                <option value="cizgiSekil3">Düz</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <br /><br />
+      </div>
+      <div
+        class="cv"
+        id="cv"
+        style="
+          margin-left: 10px;
+          width: 1000px;
+          height: 1490px;
+          background-color: rgb(221, 46, 46);
+          border: black 1px solid;
+        "
+      >
+        <div class="solKolon" id="solKolon">
+          <div class="foto" id="foto">
+            
+            <div class="fotoYazi">FOTOĞRAF</div>
+          </div>
+          <div class="kutu">
+            <div class="baslik" id="iletisimBaslik">İLETİŞİM</div>
+            <div class="icerik">
+              <ul>
+                <li><div class="tel" id="tel">{ Telefon }</div></li>
+                <li><div class="mail" id="mail">{ Mail }</div></li>
+                <li><div class="adres" id="adres">{ Adres }</div></li>
+                <li><div class="web" id="web">{ Web }</div></li>
+              </ul>
+            </div>
+          </div>
+          <div class="kutu">
+            <div class="baslik" id="egitimBaslik">EĞİTİM</div>
+            <div class="icerik">
+              <label id="egitimYazi">{ AÇIKLAMA }</label><br />
+              <ul>
+                <li hidden id="cvOkulLi1">
+                  <label id="cvOkul1"></label>
+                  <ul>
+                    <li><label id="cvOkulAciklama1"></label></li>
+                  </ul>
+                </li>
+                <li hidden id="cvOkulLi2">
+                  <label id="cvOkul2"></label>
+                  <ul>
+                    <li><label id="cvOkulAciklama2"></label></li>
+                  </ul>
+                </li>
+                <li hidden id="cvOkulLi3">
+                  <label id="cvOkul3"></label>
+                  <ul>
+                    <li><label id="cvOkulAciklama3"></label></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="kutu">
+            <div class="baslik" id="yetenekBaslik">YETENEKLER</div>
+            <div class="icerik">
+              <label id="yetenekYazi">{ AÇIKLAMA }</label><br />
+              <ul>
+                <li hidden id="cvYetenekLi1">
+                  <label id="cvYetenek1"></label>
+                  <ul>
+                    <li><label id="cvYetenekAciklama1"></label></li>
+                  </ul>
+                </li>
+                <li hidden id="cvYetenekLi2">
+                  <label id="cvYetenek2"></label>
+                  <ul>
+                    <li><label id="cvYetenekAciklama2"></label></li>
+                  </ul>
+                </li>
+                <li hidden id="cvYetenekLi3">
+                  <label id="cvYetenek3"></label>
+                  <ul>
+                    <li><label id="cvYetenekAciklama3"></label></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sagKolon">
+          <div class="isimKutusu" id="isimKutusu">
+            <div class="isim">
+              <label id="isimKutusuİsim"> { AD SOYAD } </label>
+            </div>
+            <div class="cizgi" id="cizgi"></div>
+            <div class="unvan">
+              <label id="isimKutusuUnvan"> { UNVAN } </label>
+            </div>
+          </div>
+          <div class="kutu">
+            <div class="baslik" id="hakkimdaBaslik">HAKKIMDA</div>
+            <div class="icerik">
+              <p><label id="cvHakkimda"> { AÇIKLAMA } </label></p>
+            </div>
+          </div>
+          <div class="kutu">
+            <div class="baslik" id="deneyimBaslik">İŞ DENEYİMİ</div>
+            <div class="icerik">
+              <p><label id="cvDeneyim"> { AÇIKLAMA } </label></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function OkulSayisiSec() {
+        if (document.getElementById("okulSayisi").value == "okul1") {
+          document.getElementById("okulLabel1").hidden = false;
+          document.getElementById("okul1").hidden = false;
+          document.getElementById("okulAciklama1").hidden = false;
+          document.getElementById("cvOkulLi1").hidden = false;
+        } else if (document.getElementById("okulSayisi").value == "okul2") {
+          for (let i = 1; i <= 2; i++) {
+            document.getElementById(`okulLabel${i}`).hidden = false;
+            document.getElementById(`okul${i}`).hidden = false;
+            document.getElementById(`okulAciklama${i}`).hidden = false;
+            document.getElementById(`cvOkulLi${i}`).hidden = false;
+          }
+        } else if (document.getElementById("okulSayisi").value == "okul3") {
+          for (let i = 1; i <= 3; i++) {
+            document.getElementById(`okulLabel${i}`).hidden = false;
+            document.getElementById(`okul${i}`).hidden = false;
+            document.getElementById(`okulAciklama${i}`).hidden = false;
+            document.getElementById(`cvOkulLi${i}`).hidden = false;
+          }
+        } else {
+          for (let i = 1; i <= 3; i++) {
+            document.getElementById(`okulLabel${i}`).hidden = true;
+            document.getElementById(`okul${i}`).hidden = true;
+            document.getElementById(`okulAciklama${i}`).hidden = true;
+            document.getElementById(`cvOkulLi${i}`).hidden = true;
+          }
+        }
+      }
+      function YetenekSayisiSec() 
+      {
+        if (document.getElementById("yetenekSayisi").value == "yetenek1") 
+        {
+          document.getElementById("yetenekLabel1").hidden = false;
+          document.getElementById("yetenek1").hidden = false;
+          document.getElementById("yetenekAciklama1").hidden = false;
+          document.getElementById("cvYetenekLi1").hidden = false;
+        } 
+        else if (
+          document.getElementById("yetenekSayisi").value == "yetenek2"
+        ) {
+          for (let i = 1; i <= 3; i++) 
+          {
+            document.getElementById(`yetenekLabel${i}`).hidden = false;
+            document.getElementById(`yetenek${i}`).hidden = false;
+            document.getElementById(`yetenekAciklama${i}`).hidden = false;
+            document.getElementById(`cvYetenekLi${i}`).hidden = false;
+          }
+        } 
+        else if (
+          document.getElementById("yetenekSayisi").value == "yetenek3"
+        ) {
+          for (let i = 1; i <= 3; i++) 
+          {
+            document.getElementById(`yetenekLabel${i}`).hidden = false;
+            document.getElementById(`yetenek${i}`).hidden = false;
+            document.getElementById(`yetenekAciklama${i}`).hidden = false;
+            document.getElementById(`cvYetenekLi${i}`).hidden = false;
+          }
+        }
+         
+        else {
+          for (let i = 1; i <= 4; i++) 
+          {
+            document.getElementById(`yetenekLabel${i}`).hidden = true;
+            document.getElementById(`yetenek${i}`).hidden = true;
+            document.getElementById(`yetenekAciklama${i}`).hidden = true;
+            document.getElementById(`cvYetenekLi${i}`).hidden = false;
+          }
+        }
+      }
+
+      function MetinDoldur() {
+        document.getElementById("isimKutusuİsim").innerText =
+          document.getElementById("adSecim").value;
+        document.getElementById("isimKutusuUnvan").innerText =
+          document.getElementById("unvanSecim").value;
+
+        document.getElementById("tel").innerText =
+          document.getElementById("telSecim").value;
+        document.getElementById("mail").innerText =
+          document.getElementById("mailSecim").value;
+        document.getElementById("adres").innerText =
+          document.getElementById("adresSecim").value;
+        document.getElementById("web").innerText =
+          document.getElementById("webSecim").value;
+
+        document.getElementById("egitimYazi").innerText =
+          document.getElementById("egitimAciklama").value;
+        document.getElementById("cvOkul1").innerText =
+          document.getElementById("okul1").value;
+        document.getElementById("cvOkulAciklama1").innerText =
+          document.getElementById("okulAciklama1").value;
+        document.getElementById("cvOkul2").innerText =
+          document.getElementById("okul2").value;
+        document.getElementById("cvOkulAciklama2").innerText =
+          document.getElementById("okulAciklama2").value;
+        document.getElementById("cvOkul3").innerText =
+          document.getElementById("okul3").value;
+        document.getElementById("cvOkulAciklama3").innerText =
+          document.getElementById("okulAciklama3").value;
+
+        document.getElementById("yetenekYazi").innerText =
+          document.getElementById("yetenekAciklama").value;
+        document.getElementById("cvYetenek1").innerText =
+          document.getElementById("yetenek1").value;
+        document.getElementById("cvYetenekAciklama1").innerText =
+          document.getElementById("yetenekAciklama1").value;
+        document.getElementById("cvYetenek2").innerText =
+          document.getElementById("yetenek2").value;
+        document.getElementById("cvYetenekAciklama2").innerText =
+          document.getElementById("yetenekAciklama2").value;
+        document.getElementById("cvYetenek3").innerText =
+          document.getElementById("yetenek3").value;
+        document.getElementById("cvYetenekAciklama3").innerText =
+          document.getElementById("yetenekAciklama3").value;
+          document.getElementById("cvYetenek4").innerText =
+          document.getElementById("yetenek4").value;
+        document.getElementById("cvYetenekAciklama4").innerText =
+          document.getElementById("yetenekAciklama4").value;
+       
+
+        document.getElementById("cvHakkimda").innerText =
+          document.getElementById("hakkimdaAciklama").value;
+
+        document.getElementById("cvDeneyim").innerText =
+          document.getElementById("deneyimAciklama").value;
+      }
+
+      function GorunusDoldur() {
+        document.getElementById("cv").style.backgroundColor =
+          document.getElementById("arkaplanRenk").value;
+
+        document.getElementById("solKolon").style.backgroundColor =
+          document.getElementById("solKolonRenk").value;
+        document.getElementById("isimKutusu").style.backgroundColor =
+          document.getElementById("isimKutusuRenk").value;
+        document.getElementById("isimKutusuİsim").style.color =
+          document.getElementById("isimKutusuYaziRenk").value;
+        document.getElementById("isimKutusuUnvan").style.color =
+          document.getElementById("isimKutusuYaziRenk").value;
+        document.getElementById("cizgi").style.borderBlockColor =
+          document.getElementById("isimKutusuYaziRenk").value;
+
+        if (document.getElementById("yaziTipi").value == "yaziTipi1") {
+          document.getElementById("cv").style.fontFamily = "Times New Roman";
+        } else if (document.getElementById("yaziTipi").value == "yaziTipi2") {
+          document.getElementById("cv").style.fontFamily = "Courier New";
+        } else if (document.getElementById("yaziTipi").value == "yaziTipi3") {
+          document.getElementById("cv").style.fontFamily = "Lucida Console";
+        }
+
+        if (document.getElementById("fotoSekil").value == "fotoSekil1") {
+          document.getElementById("foto").style.borderRadius = "0px";
+        } else if (document.getElementById("fotoSekil").value == "fotoSekil2") {
+          document.getElementById("foto").style.borderRadius = "50px";
+        } else if (document.getElementById("fotoSekil").value == "fotoSekil3") {
+          document.getElementById("foto").style.borderRadius = "100px";
+        }
+
+        document.getElementById("iletisimBaslik").style.borderBottomColor =
+          document.getElementById("cizgiRenk").value;
+        document.getElementById("egitimBaslik").style.borderBottomColor =
+          document.getElementById("cizgiRenk").value;
+        document.getElementById("yetenekBaslik").style.borderBottomColor =
+          document.getElementById("cizgiRenk").value;
+        document.getElementById("hakkimdaBaslik").style.borderBottomColor =
+          document.getElementById("cizgiRenk").value;
+        document.getElementById("deneyimBaslik").style.borderBottomColor =
+          document.getElementById("cizgiRenk").value;
+
+        if (document.getElementById("cizgiSekil").value == "cizgiSekil1") {
+          document.getElementById("iletisimBaslik").style.borderBottomStyle =
+            "dotted";
+          document.getElementById("egitimBaslik").style.borderBottomStyle =
+            "dotted";
+          document.getElementById("yetenekBaslik").style.borderBottomStyle =
+            "dotted";
+          document.getElementById("hakkimdaBaslik").style.borderBottomStyle =
+            "dotted";
+          document.getElementById("deneyimBaslik").style.borderBottomStyle =
+            "dotted";
+        } else if (
+          document.getElementById("cizgiSekil").value == "cizgiSekil2"
+        ) {
+          document.getElementById("iletisimBaslik").style.borderBottomStyle =
+            "dashed";
+          document.getElementById("egitimBaslik").style.borderBottomStyle =
+            "dashed";
+          document.getElementById("yetenekBaslik").style.borderBottomStyle =
+            "dashed";
+          document.getElementById("hakkimdaBaslik").style.borderBottomStyle =
+            "dashed";
+          document.getElementById("deneyimBaslik").style.borderBottomStyle =
+            "dashed";
+        } else if (
+          document.getElementById("cizgiSekil").value == "cizgiSekil3"
+        ) {
+          document.getElementById("iletisimBaslik").style.borderBottomStyle =
+            "solid";
+          document.getElementById("egitimBaslik").style.borderBottomStyle =
+            "solid";
+          document.getElementById("yetenekBaslik").style.borderBottomStyle =
+            "solid";
+          document.getElementById("hakkimdaBaslik").style.borderBottomStyle =
+            "solid";
+          document.getElementById("deneyimBaslik").style.borderBottomStyle =
+            "solid";
+        }
+      }
+    </script>
+  </body>
+</html>
