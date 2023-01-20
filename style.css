@@ -1,0 +1,77 @@
+      .sayfa {
+        display: flex;
+      }
+      .cv {
+        width: 900px;
+        height: 1200px;
+        display: flex;
+      }
+
+      .solKolon {
+        width: 300px;
+        height: 100%;
+        background-color: rgb(173, 26, 26);
+        margin-left: 30px;
+      }
+
+      .sagKolon {
+        width: 600px;
+        height: 100%;
+      }
+
+      .isimKutusu {
+        width: 100%;
+        background-color: dimgray;
+        height: 200px;
+        color: white;
+        text-align: center;
+        padding-top: 100px;
+      }
+
+      .isimKutusu .isim {
+        font-size: 50px;
+      }
+
+      .isimKutusu .unvan {
+        font-size: 30px;
+      }
+
+      .isimKutusu .cizgi {
+        border-bottom: white 3px solid;
+        width: 100px;
+        margin: auto;
+      }
+
+      .foto {
+        border: black 2px solid;
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        margin: 30px 50px 50px 50px;
+      }
+      .foto .fotoYazi {
+        text-align: center;
+        padding: 85px 0px 0px 0px;
+      }
+
+      .solKolon .kutu {
+        width: 275px;
+        height: 250px;
+        margin: 10px;
+        margin-top: 100px;
+      }
+      .sagKolon .kutu {
+        width: 500px;
+        height: 400px;
+        margin: 10px;
+        margin-top: 35px;
+      }
+      .sagKolon .baslik {
+        margin-top: 35px;
+      }
+
+      .kutu .baslik {
+        font-size: 25px;
+        border-bottom: black 3px solid;
+        margin-bottom: 10px;
+      }
